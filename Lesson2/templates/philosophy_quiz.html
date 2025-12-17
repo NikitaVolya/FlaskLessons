@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Philosophy quiz</title>
+</head>
+<body>
+    <form method="post" action="/philosophy_quiz">
+
+        <select name="philosophy_id">
+                <option value="">-- no selection --</option>
+            {% for school in philosophy_schools %}
+                <option value="{{ school.Id }}">{{ school.SchoolName }}</option>
+            {% endfor %}
+        </select>
+        {% if message %}
+          <b>{{ message }}</b>
+        {% endif %}
+
+        <button type="submit">Select</button>
+
+    </form>
+</body>
+</html>

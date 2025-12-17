@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Celestial form</title>
+</head>
+<body>
+
+    <form method="post" action="/favorite_celestial">
+        <h1>Type your favorite celestial!!!</h1>
+        <input type="text" name="celestial_name"/>
+        {% if celestial_name_message %}
+            <p>Please enter a celestial body.</p>
+        {% endif %}
+        <button type="submit">Send</button>
+    </form>
+
+</body>
+</html>

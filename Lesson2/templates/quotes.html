@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quotes</title>
+    <style>
+        .list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="list">
+
+        {% for name, quote in quotes.items() %}
+            <div>
+
+                <h1>{{ name }}</h1>
+                <p>{{ quote }}</p>
+
+            </div>
+        {% endfor %}
+
+    </div>
+</body>
+</html>

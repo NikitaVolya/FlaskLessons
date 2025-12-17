@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Planets</title>
+    <style>
+        .planets-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="planets-list">
+
+        {% for planet in planets %}
+            <div>
+
+                <h1>{{ planet.PlanetName }}</h1>
+                <b>Satellites: {{ planet.SatellitesNumber }}</b>
+                {% if planet.HasManySatellites %}
+                    <p style="color: red;">This planet has many moons!</p>
+                {% endif %}
+                <p>{{ planet.Description }}</p>
+
+            </div>
+        {% endfor %}
+
+    </div>
+
+</body>
+</html>

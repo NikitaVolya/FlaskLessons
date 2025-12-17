@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discoveries</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        .modern {
+            background-color: #d0f0ff;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Planet</th>
+                <th>Year</th>
+                <th>Note</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for discovery in discoveries %}
+            <tr class="{% if discovery.Year > 1800 %}modern{% endif %}">
+                <td>{{ discovery.Planet.PlanetName }}</td>
+                <td>{{ discovery.Year }}</td>
+                <td>
+                    {% if discovery.Year > 1800 %}
+                        Modern discovery
+                    {% else %}
+                        Ancient discovery
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
