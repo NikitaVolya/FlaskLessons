@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Brands</title>
+</head>
+<body>
+
+    {% for brand in brands %}
+        <h1>{{ brand.Name }}</h1>
+
+        {% for model in brand.Cars %}
+            <p>{{ model }}</p>
+        {% endfor %}
+    {% endfor %}
+</body>
+</html>
