@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Games Database</title>
+</head>
+<body>
+
+<h1>Developers</h1>
+<ul>
+    {% for developer in developers %}
+        <li>
+            <strong>{{ developer.firstName }} {{ developer.lastName }}</strong>
+            <ul>
+                {% for game in developer.games %}
+                    <li>{{ game.Description }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li>Non developers</li>
+    {% endfor %}
+</ul>
+
+<h1>Gamers</h1>
+<ul>
+    {% for gamer in gamers %}
+        <li>
+            <strong>{{ gamer.profile.nickname }}</strong>
+            <b>play in</b>
+            <ul>
+                {% for game in gamer.games %}
+                    <li>{{ game.Description }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    {% else %}
+        <li>Non gamers</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
